@@ -23,10 +23,11 @@ app.post('/send-email', (req, res) => {
 
     // Email details
     const mailOptions = {
-        from: email,
+        from: process.env.EMAIL_USER,
         to: 'giftworld325@gmail.com', // Your email to receive messages
         subject: `New Message from ${name}`,
-        text: message
+        text: `You have received a new message from ${name} (${email}):\n\n${message}`,
+        replyTo: email
     };
 
     // Send email
@@ -40,7 +41,7 @@ app.post('/send-email', (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
