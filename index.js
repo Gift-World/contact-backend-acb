@@ -24,7 +24,7 @@ app.post('/send-email', (req, res) => {
     // Email details
     const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: 'giftworld325@gmail.com', // Your email to receive messages
+        to: 'acb.unapologetic@gmail.com', // Your email to receive messages
         subject: `New Message from ${name}`,
         text: `You have received a new message from ${name} (${email}):\n\n${message}`,
         replyTo: email
